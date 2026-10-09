@@ -36,27 +36,82 @@
 // 6	4	1	4−1=34-1=3
 
 			
+// function maxProfit(prices) {
+//   let minPrice = Infinity;
+//   let maxProfit = 0;
+
+//   for (let price of prices) {
+//     // Find cheapest buying price
+//     if (price < minPrice) {
+//       minPrice = price;
+//     }
+
+//     // Calculate today's profit
+//     let profit = price - minPrice;
+
+//     // Keep the maximum profit
+//     if (profit > maxProfit) {
+//       maxProfit = profit;
+//     }
+//   }
+
+//   return maxProfit;
+// }
+
+// console.log(maxProfit([7, 1, 5, 3, 6, 4]));
+
+
+
+
 function maxProfit(prices) {
+
+  // STEP 1:
+  // Assume the minimum buying price is Infinity.
+  // Any actual price in the array will be smaller than Infinity.
+  // This helps us find the cheapest price while looping.
   let minPrice = Infinity;
+
+  // STEP 2:
+  // Initially, the maximum profit is 0.
+  // If we cannot make a profit, we return 0.
   let maxProfit = 0;
 
+  // STEP 3:
+  // Visit each stock price one by one.
+  // 'price' represents today's stock price.
   for (let price of prices) {
-    // Find cheapest buying price
+
+    // STEP 4:
+    // Check whether today's price is cheaper than
+    // the cheapest buying price we have seen so far.
     if (price < minPrice) {
+
+      // If today's price is cheaper, update minPrice.
+      // This becomes our best buying price so far.
       minPrice = price;
     }
 
-    // Calculate today's profit
+    // STEP 5:
+    // Calculate the profit if we sell at today's price.
+    // Profit = Selling price - Buying price.
     let profit = price - minPrice;
 
-    // Keep the maximum profit
+    // STEP 6:
+    // Compare today's profit with the maximum profit
+    // we have found so far.
     if (profit > maxProfit) {
+
+      // If today's profit is greater, save it.
       maxProfit = profit;
     }
   }
 
+  // STEP 7:
+  // After checking all prices, return the highest profit.
   return maxProfit;
 }
 
+// Test the function with the given stock prices.
 console.log(maxProfit([7, 1, 5, 3, 6, 4]));
 
+// Output: 5
