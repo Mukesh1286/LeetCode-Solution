@@ -27,7 +27,7 @@ return max
 
 }
 console.log(MaxSubArray(nums))
-
+ 
 
 
 
@@ -97,10 +97,7 @@ function maxSubArray(nums) {
     // Choice 2: Extend the previous subarray by adding nums[i].
     //
     // Math.max() chooses whichever gives the larger sum.
-    currentSum = Math.max(
-      nums[i],
-      currentSum + nums[i]
-    );
+    currentSum = Math.max(nums[i],  currentSum + nums[i]);
 
     // STEP 5:
     // Compare the current subarray sum with the best sum
@@ -118,6 +115,8 @@ console.log(
   maxSubArray([-2, 1, -3, 4, -1, 2, 1, -5, 4])
 );
 
+
+
 // Output: 6
 
 
@@ -125,18 +124,18 @@ console.log(
 // Extra space- O(1) — only two main variables
 
 
-// function maxSubArray(nums) {
-//   let currentSum = nums[0];
-//   let maxSum = nums[0];
+function maxSubArray(nums) {
+  let currentSum = nums[0];
+  let maxSum = nums[0];
 
-//   for (let i = 1; i < nums.length; i++) {
-//     currentSum = Math.max(nums[i], currentSum + nums[i]);
+  for (let i = 1; i < nums.length; i++) {
+    currentSum = Math.max(nums[i], currentSum + nums[i]);
 
-//     maxSum = Math.max(maxSum, currentSum);
-//   }
+    maxSum = Math.max(maxSum, currentSum);
+  }
 
-//   return maxSum;
-// }
+  return maxSum;
+}
 
-// console.log(maxSubArray([-2, 1, -3, 4, -1, 2, 1, -5, 4]));
+console.log(maxSubArray([-2, 1, -3, 4, -1, 2, 1, -5, 4]));
 

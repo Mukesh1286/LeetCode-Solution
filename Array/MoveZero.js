@@ -33,6 +33,9 @@ console.log(MoveZero(nums)) // [ 1, 3, 12, 0, 0 ]
 
 
 
+
+// let nums = [0, 1, 0, 3, 12];
+
 // function moveZeroes(nums) {
 //   let j = 0;
 
@@ -50,7 +53,7 @@ console.log(MoveZero(nums)) // [ 1, 3, 12, 0, 0 ]
 //   }
 // }
 
-// let nums = [0, 1, 0, 3, 12];
+
 
 // moveZeroes(nums);
 
