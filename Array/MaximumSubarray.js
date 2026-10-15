@@ -15,12 +15,14 @@ function MaxSubArray(nums){
 
    for(let i=0; i<nums.length; i++){
 
-    sum = sum + nums[i];
-    max = Math.max(max, sum)
+    
 
     if(sum < 0){
         sum = 0
     }
+
+    sum = sum + nums[i];
+    max = Math.max(max, sum)
    } 
 
 return max
@@ -129,7 +131,7 @@ function maxSubArray(nums) {
   let maxSum = nums[0];
 
   for (let i = 1; i < nums.length; i++) {
-    currentSum = Math.max(nums[i], currentSum + nums[i]);
+    currentSum = Math.max( currentSum + nums[i]);
 
     maxSum = Math.max(maxSum, currentSum);
   }

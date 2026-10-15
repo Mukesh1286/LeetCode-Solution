@@ -8,22 +8,22 @@
 // [1, 3, 12, 0, 0]
 
 let nums = [0, 1, 0, 3, 12]
-let position;
+let j;
 
 function MoveZero(nums){
 
     for(let i=0; i< nums.length; i++){
         if(nums[i] === 0){
-            position=i
+            j=i
             break;
         }
     }
-  for(let i= position + 1; i< nums.length; i++){
+  for(let i= j + 1; i< nums.length; i++){
     if(nums[i] !== 0 ){
         let tem = nums[i]
-        nums[i] = nums[position]
-        nums[position]= tem
-        position++;
+        nums[i] = nums[j]
+        nums[j]= tem
+        j++;
     }
   }
  return nums
