@@ -56,3 +56,53 @@ console.log(majorityElement([2, 2, 1, 1, 1, 2, 2]));
 // │ Time  → O(n)            │
 // │ Space → O(1)            │
 // └─────────────────────────┘
+
+
+
+
+function majorityElement(nums) {
+
+    // Store the possible majority element
+    let candidate = 0;
+
+    // Store the number of votes for the candidate
+    let count = 0;
+
+    // Traverse every element in the array
+    for (let i = 0; i < nums.length; i++) {
+
+        // If the vote count becomes 0,
+        // choose the current element as a new candidate
+        if (count === 0) {
+            candidate = nums[i];
+        }
+
+        // If the current element matches the candidate,
+        // increase the candidate's vote count
+        if (nums[i] === candidate) {
+            count++;
+        }
+
+        // If the current element is different,
+        // cancel one vote for the candidate
+        else {
+            count--;
+        }
+    }
+
+    // Return the final candidate
+    // The problem guarantees that a majority element exists
+    return candidate;
+}
+
+// Test case 1
+console.log(majorityElement([3, 2, 3])); 
+// Output: 3
+
+// Test case 2
+console.log(majorityElement([2, 2, 1, 1, 1, 2, 2])); 
+// Output: 2
+
+// Test case 3
+console.log(majorityElement([1, 1, 1, 2, 3])); 
+// Output: 1
